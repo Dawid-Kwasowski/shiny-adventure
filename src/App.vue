@@ -1,26 +1,48 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="wrapper">
+    <section class="wrapper__navigation-panel navigation-panel">
+      <div class="navigation-panel__logo">
+        <img src="../src/assets/images/KOLOR.png" alt="logo">
+      </div>
+      <nav-bar></nav-bar>
+    </section>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
+import NavBar from "./components/NavBar.vue"
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    NavBar
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;600;700&display=swap');
+
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+   .navigation-panel {
+     font-family: 'Open Sans', sans-serif;
+     background: #fff;
+     display: flex;
+     justify-content: space-between;
+     align-content: center;
+     width: 100%;
+     min-height: 60px;
+     padding: 6px 20px;
+     &__logo {
+       width:60px;
+
+       img {
+         width: 100%;
+       }
+     }
+   }
 </style>
