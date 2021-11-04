@@ -6,16 +6,24 @@
       </div>
       <nav-bar></nav-bar>
     </section>
+    <main class="main-content">
+      <intro></intro>
+    </main>
+    <FAB/>
   </div>
 </template>
 
 <script>
 
 import NavBar from "./components/NavBar.vue"
+import Intro from "./components/Intro.vue"
+import FAB from "./components/FAB.vue"
 export default {
   name: 'App',
   components: {
-    NavBar
+    NavBar,
+    Intro,
+    FAB
   }
 }
 </script>
@@ -29,11 +37,14 @@ export default {
     margin: 0;
   }
    .navigation-panel {
+     position: sticky;
+     top: 0;
+     left: 0;
      font-family: 'Open Sans', sans-serif;
      background: #fff;
      display: flex;
      justify-content: space-between;
-     align-content: center;
+     align-items: center;
      width: 100%;
      min-height: 60px;
      padding: 6px 20px;
