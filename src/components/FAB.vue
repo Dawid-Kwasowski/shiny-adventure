@@ -1,8 +1,10 @@
 <template>
+
    <div @click="openModal" class="fab fab--blue">
       <div class="fab__icon">
          <i class="fas fa-phone"></i>
       </div>
+
       <modal @closeModal="isActive = !isActive" :isActive="isActive">
          <template #header>
             <h3>Zadzwoń do Nas</h3>
@@ -45,6 +47,7 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
+      z-index: 999;
       &__icon {
          display: flex;
          align-items: center;
