@@ -35,12 +35,12 @@ export default {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'Open Sans', sans-serif;
   }
    .navigation-panel {
      position: sticky;
      top: 0;
      left: 0;
-     font-family: 'Open Sans', sans-serif;
      background: #fff;
      display: flex;
      justify-content: space-between;

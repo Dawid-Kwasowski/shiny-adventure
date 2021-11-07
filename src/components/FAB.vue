@@ -3,15 +3,33 @@
       <div class="fab__icon">
          <i class="fas fa-phone"></i>
       </div>
+      <modal @closeModal="isActive = !isActive" :isActive="isActive">
+         <template #header>
+            <h3>Zadzwoń do Nas</h3>
+         </template>
+         <template #body>
+            <h3>NR TEL: 123-456-789</h3>
+         </template>
+      </modal>
    </div>
 </template>
 <script>
+import Modal from "./Modal.vue"
 export default {
+   data() {
+      return {
+         isActive: false
+      }
+   },
+   components: {
+      Modal,
+   },
    methods: {
       openModal() {
-         return alert('TEST')
+         return this.isActive = !this.isActive
       }
    }
+
 }
 </script>
 <style lang="scss">
