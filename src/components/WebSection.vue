@@ -1,10 +1,10 @@
 <template>
   <section :id="sectionID" class="web-section">
-     <div :class="[darkMode ? 'web-section__wrapper--dark-mode':'','web-section__wrapper']">
+     <div :class="[hero ? 'web-section__header-hero':'',darkMode ? 'web-section__wrapper--dark-mode':'','web-section__wrapper']">
          <div class="web-section__header-wrapper">
-           <header :class="[darkMode ? 'web-section__header--dark-mode':'','web-section__header']">
-            <slot name="header"></slot>
-           </header>
+            <header :class="[darkMode ? 'web-section__header--dark-mode':'','web-section__header']">
+               <slot name="header"></slot>
+            </header>
          </div>
          <div :class="[darkMode ? 'web-section__body':'','web-section__body']">
             <slot name="body"></slot>
@@ -13,7 +13,7 @@
             <slot name="footer"></slot>
          </div>
      </div>
-  </section>
+  </section>   
 </template>
 
 <script>
@@ -21,6 +21,7 @@ export default {
    props: {
       darkMode: Boolean,
       sectionID: String,
+      hero: Boolean
    }
 }
 </script>
@@ -54,6 +55,14 @@ export default {
             color: #fff;
             border-bottom: 1px solid #fff;
          }
+      }
+      &__header-hero {
+         background-image: url('../assets/images/clay-banks-sm.jpg');
+         background-size: cover;
+         
+         background-position-y: -200px;
+         width: 100%;
+         height: 200px;
       }
 
       &__body {

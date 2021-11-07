@@ -44,6 +44,7 @@ export default {
       background: $dark-color;
       opacity: .8;
       position: fixed;
+      z-index: 998;
       top: 0;
       left: 0;
       right: 0;
@@ -52,6 +53,7 @@ export default {
 
    .modal {
       position: fixed;
+      z-index: 999;
       top: 30%;
       left: 50%;
       transform: translate(-50%,-50%);

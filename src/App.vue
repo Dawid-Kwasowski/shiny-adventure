@@ -20,7 +20,19 @@
           </article>
         </template>
       </web-section>
+
       <locations></locations>
+
+      <web-section :hero="true" :darkMode="true">
+        <template #header>
+          <div class="hero">
+            <h1>{{sectionTitles[1]}}</h1>
+          </div>
+        </template>
+        <template #body>
+          
+        </template>
+      </web-section>
 
     </main>
     <FAB/>
@@ -39,7 +51,7 @@ export default {
     return {
       sectionTitles: [
         'O nas',
-        'Lokalizacja'
+        'Usługi'
       ],
       sectionContents: [
         'PRO CLEANING SERVICE - jest firmą wykorzystującą atestowane i bezpieczne dla ludzi i zwierząt środki chemiczne. Pracujemy na nowoczesnym sprzęcie przemysłowym takich firm jak Prochem,Karcher'
@@ -66,6 +78,7 @@ export default {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
   }
+  
 
    .navigation-panel {
      position: sticky;
