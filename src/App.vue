@@ -30,7 +30,7 @@
           </div>
         </template>
         <template #body>
-          
+          <slider></slider>
         </template>
       </web-section>
 
@@ -46,6 +46,7 @@ import Intro from "./components/Intro.vue"
 import FAB from "./components/FAB.vue"
 import WebSection from "./components/WebSection.vue"
 import Locations from "./components/Locations.vue"
+import Slider from "./components/Slider.vue"
 export default {
   data() {
     return {
@@ -64,7 +65,8 @@ export default {
     Intro,
     FAB,
     WebSection,
-    Locations
+    Locations,
+    Slider
   }
 }
 </script>
@@ -82,6 +84,7 @@ export default {
 
    .navigation-panel {
      position: sticky;
+     z-index: 999;
      top: 0;
      left: 0;
      background: #fff;

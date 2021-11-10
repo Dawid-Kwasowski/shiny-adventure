@@ -1,7 +1,7 @@
 <template>
   <section :id="sectionID" class="web-section">
-     <div :class="[hero ? 'web-section__header-hero':'',darkMode ? 'web-section__wrapper--dark-mode':'','web-section__wrapper']">
-         <div class="web-section__header-wrapper">
+     <div :class="[darkMode ? 'web-section__wrapper--dark-mode':'','web-section__wrapper']">
+         <div :class="[hero ? 'web-section__header-hero':'','web-section__header-wrapper']">
             <header :class="[darkMode ? 'web-section__header--dark-mode':'','web-section__header']">
                <slot name="header"></slot>
             </header>
@@ -31,7 +31,6 @@ export default {
    .web-section {
       
       &__wrapper {
-         padding: 10px 20px;
          display: flex;
          flex-direction: column;
          align-items: center;
@@ -44,16 +43,17 @@ export default {
 
       &__header {
          text-align: center;
+         
          text-transform: uppercase;
          font-size: 32px;
          font-weight: 500;
          color: $dark-blue;
-         border-bottom: 1px solid $dark-blue;
+         // border-bottom: 1px solid $dark-blue;
          margin: 20px 0;
          // width: 200px;
          &--dark-mode {
             color: #fff;
-            border-bottom: 1px solid #fff;
+            // border-bottom: 1px solid #fff;
          }
       }
       &__header-hero {
@@ -67,6 +67,7 @@ export default {
 
       &__body {
          padding: 10px;
+         width: 100%;
       }
    }
 </style>
