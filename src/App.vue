@@ -43,7 +43,7 @@
           <h1>{{sectionTitles[3]}}</h1>
         </template>
         <template #body>
-              
+          <Form/>
         </template>
       </web-section>
 
@@ -62,6 +62,7 @@ import Locations from "./components/Locations.vue"
 import Slider from "./components/Slider.vue"
 import Dropdown from "./components/Dropdown.vue"
 import ServiceList from "./components/ServiceList.vue"
+import Form from "./components/Form.vue"
 export default {
   data() {
     return {
@@ -86,7 +87,8 @@ export default {
     Locations,
     Slider,
     Dropdown,
-    ServiceList
+    ServiceList,
+    Form
   },
   methods: {
     sendToService(payload) {

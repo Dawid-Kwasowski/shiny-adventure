@@ -10,7 +10,7 @@
             <h3>Zadzwoń do Nas</h3>
          </template>
          <template #body>
-            <h3>NR TEL: 123-456-789</h3>
+            <h3>NR TEL: +48 790 848 040</h3>
          </template>
       </modal>
    </div>
