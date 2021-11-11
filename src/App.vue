@@ -46,9 +46,11 @@
           <Form/>
         </template>
       </web-section>
-
+      
     </main>
+    
     <FAB/>
+    <footer-section></footer-section>
   </div>
 </template>
 
@@ -63,6 +65,7 @@ import Slider from "./components/Slider.vue"
 import Dropdown from "./components/Dropdown.vue"
 import ServiceList from "./components/ServiceList.vue"
 import Form from "./components/Form.vue"
+import FooterSection from './components/FooterSection.vue'
 export default {
   data() {
     return {
@@ -88,7 +91,8 @@ export default {
     Slider,
     Dropdown,
     ServiceList,
-    Form
+    Form,
+    FooterSection
   },
   methods: {
     sendToService(payload) {

@@ -125,8 +125,7 @@ export default {
       justify-content: center;
       position: relative;
       &__wrapper {
-         width: 290px;
-         
+         width: 300px;
       }
 
       // dropdown btn below
