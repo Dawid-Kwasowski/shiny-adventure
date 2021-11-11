@@ -47,6 +47,7 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
+      box-shadow: 0px 0px 8px 1px #263238;
       z-index: 999;
       &__icon {
          display: flex;

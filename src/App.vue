@@ -8,8 +8,13 @@
     </section>
     <main class="main-content">
       
-      <intro></intro>
-
+      
+      <web-section :hero="false" :darkMode="true">
+        <template #body>
+          <slider></slider>
+        </template>
+      </web-section>
+      <!-- <intro></intro> -->
       <web-section :darkMode="true">
         <template #header>
           <h1>{{sectionTitles[0]}}</h1>
@@ -23,14 +28,22 @@
 
       <locations></locations>
 
-      <web-section :hero="true" :darkMode="true">
+      <web-section>
         <template #header>
-          <div class="hero">
-            <h1>{{sectionTitles[1]}}</h1>
-          </div>
+          <h1>{{sectionTitles[2]}}</h1>
         </template>
         <template #body>
-          <slider></slider>
+          <dropdown @selectList="sendToService"></dropdown>
+          <service-list :serviceList="currentServiceList"></service-list>
+        </template>
+      </web-section>
+
+      <web-section :darkMode="true">
+        <template #header>
+          <h1>{{sectionTitles[3]}}</h1>
+        </template>
+        <template #body>
+              
         </template>
       </web-section>
 
@@ -42,31 +55,44 @@
 <script>
 
 import NavBar from "./components/NavBar.vue"
-import Intro from "./components/Intro.vue"
+// import Intro from "./components/Intro.vue"
 import FAB from "./components/FAB.vue"
 import WebSection from "./components/WebSection.vue"
 import Locations from "./components/Locations.vue"
 import Slider from "./components/Slider.vue"
+import Dropdown from "./components/Dropdown.vue"
+import ServiceList from "./components/ServiceList.vue"
 export default {
   data() {
     return {
       sectionTitles: [
         'O nas',
-        'Usługi'
+        'Usługi',
+        'Cennik',
+        'Kontakt'
       ],
       sectionContents: [
         'PRO CLEANING SERVICE - jest firmą wykorzystującą atestowane i bezpieczne dla ludzi i zwierząt środki chemiczne. Pracujemy na nowoczesnym sprzęcie przemysłowym takich firm jak Prochem,Karcher'
-      ]
+      ],
+      currentServiceList: []
     }
   },
   name: 'App',
   components: {
     NavBar,
-    Intro,
+    // Intro,
     FAB,
     WebSection,
     Locations,
-    Slider
+    Slider,
+    Dropdown,
+    ServiceList
+  },
+  methods: {
+    sendToService(payload) {
+      this.currentServiceList = payload
+      console.log(this.currentServiceList)
+    }
   }
 }
 </script>
