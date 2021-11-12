@@ -7,14 +7,14 @@
       <nav-bar></nav-bar>
     </section>
     <main class="main-content">
-      
+      <intro></intro>
       
       <web-section :hero="false" :darkMode="true">
         <template #body>
           <slider></slider>
         </template>
       </web-section>
-      <!-- <intro></intro> -->
+      
       <web-section :darkMode="true">
         <template #header>
           <h1>{{sectionTitles[0]}}</h1>
@@ -57,7 +57,7 @@
 <script>
 
 import NavBar from "./components/NavBar.vue"
-// import Intro from "./components/Intro.vue"
+import Intro from "./components/Intro.vue"
 import FAB from "./components/FAB.vue"
 import WebSection from "./components/WebSection.vue"
 import Locations from "./components/Locations.vue"
@@ -76,7 +76,7 @@ export default {
         'Kontakt'
       ],
       sectionContents: [
-        'PRO CLEANING SERVICE - jest firmą wykorzystującą atestowane i bezpieczne dla ludzi i zwierząt środki chemiczne. Pracujemy na nowoczesnym sprzęcie przemysłowym takich firm jak Prochem,Karcher'
+        'PRO CLEANING SERVICE - jest firmą wykorzystującą atestowane i bezpieczne dla ludzi i zwierząt środki chemiczne. Pracujemy na nowoczesnym sprzęcie przemysłowym takich firm jak Prochem, Karcher.'
       ],
       currentServiceList: []
     }
@@ -84,7 +84,7 @@ export default {
   name: 'App',
   components: {
     NavBar,
-    // Intro,
+    Intro,
     FAB,
     WebSection,
     Locations,

@@ -90,10 +90,6 @@ export default {
                priceList: [{meters:'', price:'', info: 'od 180zł'}]
             },
             {
-               title: "Pranie tapicerki samochodowej",
-               priceList: [{meters:'', price:'', info: 'od 180zł'}]
-            },
-            {
                title: "Pranie podsufitki",
                priceList: [{meters:'', price:'', info: 'od 50 zł'}]
             },
