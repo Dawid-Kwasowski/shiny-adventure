@@ -10,7 +10,8 @@
               <i class="fas fa-angle-up"></i>
            </span>
         </div>
-        <div v-show="isActive" class="dropdown__service-list">
+        <transition>
+           <div v-show="isActive" class="dropdown__service-list">
            <ul class="dropdown__service-list-wrapper">
               <li 
               v-for="(service,index) in services" 
@@ -21,6 +22,8 @@
               </li>
            </ul>
         </div>
+        </transition>
+        
      </div>
   </div>
 </template>

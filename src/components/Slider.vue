@@ -13,7 +13,11 @@
                   <i class="far fa-images"></i>
                </template>
                <template v-else>
-                  <img :src="images[currentImg].img" alt="">
+                  <img v-show="isDesktop" class="prev" :src="images[currentImg].img" alt="">
+                  <transition name="fade">
+                     <img class="main" :src="images[currentImg].img" alt="">
+                  </transition>
+                  <img v-show="isDesktop" class="next" :src="images[currentImg].img" alt="">
                </template>
             </div>
             <div class="slider__description">
@@ -45,7 +49,8 @@ export default {
             {id: 3, img: imageRoom ,description: "Kompleksowe sprzątanie lokali po imprezach okolicznościowych", alt: ""},
             {id: 4, img: imageVacuumCleaner ,description: "Odkurzanie i pranie dywanów ", alt: ""},
          ],
-         currentImg: 0
+         currentImg: 0,
+         isDesktop: matchMedia("(min-width:1024px)").matches,
       }
    },
    methods: {
@@ -53,13 +58,19 @@ export default {
         if(this.currentImg === this.images.length) {
            return this.currentImg = 0
         }
-        return this.currentImg += 1
+        else {
+           return this.currentImg += 1
+        }
+        
      },
      prevImg() {
         if(this.currentImg === 0) {
            return this.currentImg = this.images.length
         }
-        return this.currentImg -= 1
+        else {
+           return this.currentImg -= 1
+        }
+        
      }
    },
    mounted() {
@@ -67,19 +78,44 @@ export default {
          if(this.currentImg === this.images.length) {
            return this.currentImg = 0
         }
-        return this.currentImg += 1
+        else {
+           return this.currentImg += 1
+        }
+        
       },3000) 
    }
 }
 </script>
 
 <style lang="scss">
+   .prev,.next {
+      position: absolute;
+      z-index: 1;
+      opacity: .5;
+   }
+   .prev {
+      transform: translateX(-200px);
+   }
+   .next {
+      transform: translateX(200px) ;
+   }
+   .main {
+      position:   absolute;
+      z-index: 2;
+      box-shadow: 0 5px 8px 2px #263238;
+   }
    .slider {
       display: flex;
       justify-content: center;
       align-content: center;
       width: 100%;
       position: relative;
+      margin: auto;
+      
+      @media (min-width:1024px) {
+         width: 500px;         
+      }
+
       &__wrapper {
          display: flex;
          justify-content: center;
@@ -133,7 +169,10 @@ export default {
          display: flex;
          align-items: center;
          position: absolute;
-
+         z-index: 3;
+         background: #2632384f;
+         padding: 10px;
+         border-radius: 5px;
          &--left {
             top: 50%;
             left: 10px;

@@ -44,6 +44,8 @@ export default {
          justify-content: center;
          flex-direction: column;
          margin: 0 5px;
+         max-width: 600px;
+         margin: auto;
       }
 
       &__controls {

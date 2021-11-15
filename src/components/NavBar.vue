@@ -12,10 +12,10 @@
          </li>
       </ul>
       <ul v-else :class="[isActive ? 'nav__item-list--active': '', 'nav__item-list']">
-         <li v-for="(item, index) in itemList" class="nav__item" :key="index">
+         <li @click="toggleBurger" v-for="(item, index) in itemList" class="nav__item" :key="index">
             <a class="nav__item-link" :href="item.anchor">{{item.title}}</a>
          </li>
-      </ul>
+      </ul> 
    </nav>
 </template>
 
@@ -24,10 +24,10 @@ export default {
    data() {
       return {
          itemList : [
-            {title: "O nas", anchor: ""},
-            {title: "Usługi", anchor: ""},
-            {title: "Cennik", anchor: ""},
-            {title: "Kontakt", anchor: ""}
+            {title: "O nas", anchor: "#about"},
+            {title: "Usługi", anchor: "#services"},
+            {title: "Cennik", anchor: "#price"},
+            {title: "Kontakt", anchor: "#contact"}
          ],
          isDesktop: matchMedia("(min-width:1024px)").matches,
          isActive: this.isDesktop ? true : false         
@@ -70,7 +70,7 @@ export default {
    .nav {
       display: flex;
       align-items: center;
-      z-index: 9999;
+      z-index: 10;
       &__item-list {
          position: fixed;
          display: none;
@@ -112,5 +112,11 @@ export default {
             font-size: 24px;
         }
       }
+   }
+   .fade-enter-active, .fade-leave-active {
+      transition: opacity .5s;
+   }
+   .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+      opacity: 0;
    }
 </style>

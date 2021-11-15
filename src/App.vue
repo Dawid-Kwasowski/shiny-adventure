@@ -7,28 +7,16 @@
       <nav-bar></nav-bar>
     </section>
     <main class="main-content">
-      <intro></intro>
+      <intro sectionID="about"></intro>
       
-      <web-section :hero="false" :darkMode="true">
+      <web-section sectionID="services" :hero="false" :darkMode="true">
         <template #body>
           <slider></slider>
         </template>
       </web-section>
-      
-      <web-section :darkMode="true">
-        <template #header>
-          <h1>{{sectionTitles[0]}}</h1>
-        </template>
-        <template #body>
-          <article class="web-section__content">
-              <p class="web-section__description">{{sectionContents[0]}}</p>
-          </article>
-        </template>
-      </web-section>
-
       <locations></locations>
 
-      <web-section>
+      <web-section sectionID="price">
         <template #header>
           <h1>{{sectionTitles[2]}}</h1>
         </template>
@@ -38,19 +26,19 @@
         </template>
       </web-section>
 
-      <web-section :darkMode="true">
+      <!-- <web-section sectionID="contact" :darkMode="true">
         <template #header>
           <h1>{{sectionTitles[3]}}</h1>
         </template>
         <template #body>
           <Form/>
         </template>
-      </web-section>
+      </web-section> -->
       
     </main>
     
     <FAB/>
-    <footer-section></footer-section>
+    <footer-section sectionID="contact"></footer-section>
   </div>
 </template>
 
@@ -64,7 +52,7 @@ import Locations from "./components/Locations.vue"
 import Slider from "./components/Slider.vue"
 import Dropdown from "./components/Dropdown.vue"
 import ServiceList from "./components/ServiceList.vue"
-import Form from "./components/Form.vue"
+// import Form from "./components/Form.vue"
 import FooterSection from './components/FooterSection.vue'
 export default {
   data() {
@@ -74,9 +62,6 @@ export default {
         'Usługi',
         'Cennik',
         'Kontakt'
-      ],
-      sectionContents: [
-        'PRO CLEANING SERVICE - jest firmą wykorzystującą atestowane i bezpieczne dla ludzi i zwierząt środki chemiczne. Pracujemy na nowoczesnym sprzęcie przemysłowym takich firm jak Prochem, Karcher.'
       ],
       currentServiceList: []
     }
@@ -91,7 +76,7 @@ export default {
     Slider,
     Dropdown,
     ServiceList,
-    Form,
+    // Form,
     FooterSection
   },
   methods: {
@@ -111,12 +96,13 @@ export default {
     padding: 0;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
+    scroll-behavior: smooth ;
   }
   
 
    .navigation-panel {
      position: sticky;
-     z-index: 999;
+     z-index: 4;
      top: 0;
      left: 0;
      background: #fff;

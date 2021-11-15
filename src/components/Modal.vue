@@ -44,7 +44,7 @@ export default {
       background: $dark-color;
       opacity: .8;
       position: fixed;
-      z-index: 998;
+      z-index: 5;
       top: 0;
       left: 0;
       right: 0;
