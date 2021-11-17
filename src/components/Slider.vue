@@ -14,15 +14,15 @@
                </template>
                <template v-else>
                   <img v-show="isDesktop" class="prev" :src="images[currentImg].img" alt="">
-                  <transition name="fade">
+                 
                      <img class="main" :src="images[currentImg].img" alt="">
-                  </transition>
+                     <div class="slider__description">
+                        <p>{{images[currentImg].description}}</p>
+                     </div>
                   <img v-show="isDesktop" class="next" :src="images[currentImg].img" alt="">
                </template>
             </div>
-            <div class="slider__description">
-               <p>{{images[currentImg].description}}</p>
-            </div>
+            
         </div>
          <div @click="nextImg" class="slider__controller slider__controller--right">
             <div class="slider__controller-icon">
@@ -150,6 +150,7 @@ export default {
          padding: 10px;
          position: absolute;
          bottom: 0px;
+         z-index: 2;
          p {
             width: 100%;
             overflow-wrap: break-word;
