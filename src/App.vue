@@ -154,6 +154,10 @@ export default {
           title: "Mycie okien wraz z ramą i parapetem.",
           icon: "fab fa-windows"
         },
+         {
+          title: "Pranie dywanów.",
+          icon: "fab fa-first-order-alt"
+        },
         {
           title: "Pranie puf, sof, narożników i krzeseł.",
           icon: "fas fa-couch"
@@ -162,11 +166,6 @@ export default {
           title: "Kompleksowe sprzątanie aut.",
           icon: "fas fa-car"
         },
-        {
-          title: "Pranie dywanów.",
-          icon: "fab fa-first-order-alt"
-        }
-        
       ],
       isDesktop: matchMedia("(min-width:1024px)").matches,
       currentServiceList: []
