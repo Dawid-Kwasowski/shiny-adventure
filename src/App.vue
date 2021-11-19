@@ -161,6 +161,10 @@ export default {
         {
           title: "Kompleksowe sprzątanie aut.",
           icon: "fas fa-car"
+        },
+        {
+          title: "Pranie dywanów.",
+          icon: "fab fa-first-order-alt"
         }
         
       ],
