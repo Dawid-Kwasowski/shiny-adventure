@@ -20,7 +20,16 @@
         </template>
       </web-section>
       <locations></locations>
-
+      <div class="main-content__service-list-wrapper">
+          <service-card v-for="(service,index) in generalServices" :key="index">
+            <template #icon>
+              <i :class="service.icon"></i>
+            </template>
+            <template #title>
+              <h3> {{service.title}}</h3>
+            </template>
+        </service-card>
+      </div>
       <web-section sectionID="price">
         <template #header>
           <h1>{{sectionTitles[2]}}</h1>
@@ -31,16 +40,6 @@
           <desktop-service-list :services="services" v-else></desktop-service-list>
         </template>
       </web-section>
-
-      <!-- <web-section sectionID="contact" :darkMode="true">
-        <template #header>
-          <h1>{{sectionTitles[3]}}</h1>
-        </template>
-        <template #body>
-          <Form/>
-        </template>
-      </web-section> -->
-      
     </main>
     
     <FAB/>
@@ -59,6 +58,7 @@ import Slider from "./components/Slider.vue"
 import Dropdown from "./components/Dropdown.vue"
 import ServiceList from "./components/ServiceList.vue"
 // import Form from "./components/Form.vue"
+import ServiceCard from "./components/ServiceCard.vue"
 import FooterSection from './components/FooterSection.vue'
 import DesktopServiceList from './components/DesktopServiceList.vue'
 export default {
@@ -80,7 +80,7 @@ export default {
                   {meters: "100-150m²", price: "400-500 zł",info: ''},
                   {meters: "150-200m²", price: "500-600 zł",info: ''},
                   {meters: "200-250m²", price: " 600-700 zł",info: ''},
-               ]
+               ],
             },
             {
                title: 'Poremontowe sprzątanie domu/mieszkania',
@@ -137,6 +137,33 @@ export default {
                priceList: [{meters:'', price:'', info: '130zł / 160zł'}]
             },
          ],
+      generalServices: [
+        {
+          title: "Kompleksowe sprzątanie domu/mieszkania.",
+          icon: "fas fa-home"
+        },
+        {
+          title: "Poremontowe sprzątanie domu/mieszkania.",
+          icon: "fas fa-building"
+        },
+        {
+          title: "Sprzątanie lokali po imprezach okolicznościowych.",
+          icon: "fas fa-glass-cheers"
+        },
+        {
+          title: "Mycie okien wraz z ramą i parapetem.",
+          icon: "fab fa-windows"
+        },
+        {
+          title: "Pranie puf, sof, narożników i krzeseł.",
+          icon: "fas fa-couch"
+        },
+        {
+          title: "Kompleksowe sprzątanie aut.",
+          icon: "fas fa-car"
+        }
+        
+      ],
       isDesktop: matchMedia("(min-width:1024px)").matches,
       currentServiceList: []
     }
@@ -153,7 +180,8 @@ export default {
     ServiceList,
     // Form,
     FooterSection,
-    DesktopServiceList
+    DesktopServiceList,
+    ServiceCard
   },
   methods: {
     sendToService(payload) {
@@ -173,6 +201,14 @@ export default {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     scroll-behavior: smooth ;
+  }
+
+  .main-content {
+    &__service-list-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
   }
   
 

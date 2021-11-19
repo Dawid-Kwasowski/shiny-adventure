@@ -16,9 +16,6 @@
                   <img v-show="isDesktop" class="prev" :src="images[currentImg].img" alt="">
                  
                      <img class="main" :src="images[currentImg].img" alt="">
-                     <div class="slider__description">
-                        <p>{{images[currentImg].description}}</p>
-                     </div>
                   <img v-show="isDesktop" class="next" :src="images[currentImg].img" alt="">
                </template>
             </div>
@@ -55,7 +52,8 @@ export default {
    },
    methods: {
      nextImg() {
-        if(this.currentImg === this.images.length) {
+        if(this.currentImg === this.images.length - 1) {
+           
            return this.currentImg = 0
         }
         else {
@@ -65,7 +63,7 @@ export default {
      },
      prevImg() {
         if(this.currentImg === 0) {
-           return this.currentImg = this.images.length
+           return this.currentImg = this.images.length - 1
         }
         else {
            return this.currentImg -= 1
@@ -75,12 +73,7 @@ export default {
    },
    mounted() {
       setInterval(() => {
-         if(this.currentImg === this.images.length) {
-           return this.currentImg = 0
-        }
-        else {
-           return this.currentImg += 1
-        }
+         this.nextImg()
         
       },3000) 
    }

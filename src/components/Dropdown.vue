@@ -34,9 +34,7 @@ export default {
          currentService: 'Wybierz usługę',
       }
    },
-   props: {
-      services: []
-   },
+   props: ['services'],
    methods: {
       // method which toggle a dropdown
       toggleDropdown() {

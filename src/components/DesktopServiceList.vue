@@ -21,9 +21,7 @@
 
 <script>
 export default {
-   props: {
-      services: Array
-   }
+   props: ['services']
 }
 </script>
 
