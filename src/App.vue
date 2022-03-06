@@ -117,7 +117,7 @@ export default {
                priceList: [{meters:'', price:'', info: '8 - 12zł za metr'}]
             },
             {
-               title: "Pranie foteli, kszeseł, puf itp",
+               title: "Pranie foteli, krzeseł, puf itp",
                priceList: [{meters:'', price:'', info: 'od 40 zł'}]
             },
             {

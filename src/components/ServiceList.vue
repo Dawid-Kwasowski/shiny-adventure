@@ -24,6 +24,8 @@ export default {
       display: flex;
       justify-content: center;
       margin: 10px 0;
+      border: 2px solid #455a64;
+      padding: 10px;
       &__wrapper {
          list-style: none;
          width: 100%;
@@ -33,8 +35,12 @@ export default {
          font-size: 24px;
          display: flex;
          justify-content: space-between;
-         border-bottom: 1px solid #e0e0e0;
+         border-bottom: 2px solid #455a64;
          color: #455A64;
+
+         &:last-child {
+            border-bottom: none;
+         }
       }
    }
 </style>
